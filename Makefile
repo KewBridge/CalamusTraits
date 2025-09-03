@@ -74,13 +74,13 @@ clean:
 APPENDIX_FILES = data/appendix_1.txt data/appendix_2.txt
 SENTENCES_FILES = data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt
 TREATMENTS_FILES = data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt
-MONOGRAPH_FILES = APPENDIX_FILES SENTENCES_FILES TREATMENTS_FILES
+MONOGRAPH_FILES = $(APPENDIX_FILES) $(SENTENCES_FILES) $(TREATMENTS_FILES)
 
 CERATALOBUS_FILES = ceratolobus_outputs/formatted_supp_data.csv ceratolobus_outputs/supp_data_multi.csv ceratolobus_outputs/app1_descriptions.csv ceratolobus_outputs/app2_descriptions.csv ceratolobus_descriptions ceratolobus_outputs/quantitative_traits.csv 
 DAEMONOROPS_FILES = daemonorops_outputs/formatted_supp_data.csv daemonorops_outputs/supp_data_multi.csv daemonorops_outputs/app1_descriptions.csv daemonorops_outputs/app2_descriptions.csv daemonorops_descriptions daemonorops_outputs/quantitative_traits.csv
 EXTRA_FILES = extra_outputs/formatted_supp_data.csv extra_outputs/supp_data_multi.csv extra_outputs/app1_descriptions.csv extra_outputs/app2_descriptions.csv extra_descriptions extra_outputs/quantitative_traits.csv
 
-all: $(MONOGRAPH_FILES) $(CERATALOBUS_FILES) $(DAEMONOROPS_FILES) $(EXTRA_FILES)
+all: $(CERATALOBUS_FILES) $(DAEMONOROPS_FILES) $(EXTRA_FILES)
 ceratolobus: $(CERATALOBUS_FILES)
 daemonorops: $(DAEMONOROPS_FILES)	
 extra: $(EXTRA_FILES)
