@@ -1,5 +1,5 @@
 {
   "name": "Python 3.13",
   "image": "mcr.microsoft.com/devcontainers/python:3.13-bullseye",  
-  "postStartCommand": "pip install -r requirements.txt && bash ./.devcontainer/setup-ssh.sh",
+  "postStartCommand": "pip install -r requirements.txt && bash ./.devcontainer/setup-ssh.sh"
 }
