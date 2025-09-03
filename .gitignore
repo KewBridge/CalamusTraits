@@ -4,5 +4,7 @@ resources/calamus_monograph.pdf
 __pycache__/
 *.log
 ceratolobus_outputs/*
+daemonorops_outputs/*
+extra_outputs/*
 metrics_outputs/*
 plots_outputs/*
