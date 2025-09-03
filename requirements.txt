@@ -3,6 +3,5 @@ numpy
 pypdf
 openpyxl
 ollama
-textwrap
 evaluate
 plotnine
