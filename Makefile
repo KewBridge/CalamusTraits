@@ -88,19 +88,19 @@ extra: $(EXTRA_FILES)
 DESCRIPTION_FILES = ceratolobus_outputs/final_combined_descriptions.csv daemonorops_outputs/final_combined_descriptions.csv extra_outputs/final_combined_descriptions.csv
 QUANTITATIVE_FILES = ceratolobus_outputs/quantitative_traits.csv daemonorops_outputs/quantitative_traits.csv extra_outputs/quantitative_traits.csv
 
-metrics_outputs/bert_combined_subject.csv: data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt trial20-06/cerat_desc_combined.csv trial20-06/daem_desc_combined.csv trial20-06/extra_desc_combined.csv 
+metrics_outputs/bert_combined_subject.csv: data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt ceratolobus_outputs/subject_descriptions.csv daemonorops_outputs/subject_descriptions.csv extra_outputs/subject_descriptions.csv 
 	mkdir -p metrics_outputs
 	python -m scripts.results.calc_metric_results $^ $@ --metric=bert --level=subject
 
-metrics_outputs/rouge_combined_subject.csv: data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt trial20-06/cerat_desc_combined.csv trial20-06/daem_desc_combined.csv trial20-06/extra_desc_combined.csv 
+metrics_outputs/rouge_combined_subject.csv: data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt ceratolobus_outputs/subject_descriptions.csv daemonorops_outputs/subject_descriptions.csv extra_outputs/subject_descriptions.csv
 	mkdir -p metrics_outputs
 	python -m scripts.results.calc_metric_results $^ $@ --metric=rouge --level=subject
 
-metrics_outputs/bert_combined_group.csv: data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt trial20-06/cerat_desc_combined_treatment.csv trial20-06/daem_desc_combined_treatment.csv trial20-06/extra_desc_combined_treatment.csv 
+metrics_outputs/bert_combined_group.csv: data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt ceratolobus_outputs/final_combined_descriptions.csv daemonorops_outputs/final_combined_descriptions.csv extra_outputs/final_combined_descriptions.csv
 	mkdir -p metrics_outputs
 	python -m scripts.results.calc_metric_results $^ $@ --metric=bert --level=group
 
-metrics_outputs/rouge_combined_group.csv: data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt trial20-06/cerat_desc_combined_treatment.csv trial20-06/daem_desc_combined_treatment.csv trial20-06/extra_desc_combined_treatment.csv 
+metrics_outputs/rouge_combined_group.csv: data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt ceratolobus_outputs/final_combined_descriptions.csv daemonorops_outputs/final_combined_descriptions.csv extra_outputs/final_combined_descriptions.csv
 	mkdir -p metrics_outputs
 	python -m scripts.results.calc_metric_results $^ $@ --metric=rouge --level=group
 
