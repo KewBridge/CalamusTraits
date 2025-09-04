@@ -18,9 +18,9 @@ data/%_sentences.txt: scripts/monograph_text_extraction/extract_treatments.py re
 	mkdir -p data
 	python $^ --sentences $@
 
-treatments: data/treatments.txt
+treatments: data/ceratolobus_treatments.txt data/daemonorops_treatments.txt data/extra_treatments.txt
 
-sentences: data/sentences.txt
+sentences: data/ceratolobus_sentences.txt data/daemonorops_sentences.txt data/extra_sentences.txt
 
 monograph_data: appendices treatments sentences
 
