@@ -2,6 +2,8 @@
 
 ## What Does Each Script do?
 
+Where * could be Ceratolobus, Daemonorops, or Extras (representing extremities within the dataset)
+
 ### Cleaning Input Data etc  
 
 | File Name | Description |
@@ -71,7 +73,7 @@ graph TD
     app1_extraction[scripts/trait_extraction/app1_extraction.py]
 
     %% Output
-    traits[ceratolobus_outputs/quantitative_traits.csv]
+    traits[*_outputs/quantitative_traits.csv]
 
     %% Connections
     sentences --> app1_extraction
@@ -99,7 +101,7 @@ graph TD
 ```mermaid
 graph TD
     %% Resource inputs
-    ceratolobus_xlsx[resources/Ceratolobus.xlsx]
+    *_xlsx[resources/*.xlsx]
     appendix_1[data/appendix_1.txt]
     appendix_2[data/appendix_2.txt]
 
@@ -110,15 +112,15 @@ graph TD
     combine_script[scripts/combine_descriptions.py]
 
     %% Output files
-    formatted_csv[ceratolobus_outputs/formatted_supp_data.csv]
-    multi_csv[ceratolobus_outputs/supp_data_multi.csv]
-    app1_desc[ceratolobus_outputs/app1_descriptions.csv]
-    app2_desc[ceratolobus_outputs/app2_descriptions.csv]
-    final_desc[ceratolobus_outputs/final_combined_descriptions.csv]
-    subject_desc[ceratolobus_outputs/subject_descriptions.csv]
+    formatted_csv[*_outputs/formatted_supp_data.csv]
+    multi_csv[*_outputs/supp_data_multi.csv]
+    app1_desc[*_outputs/app1_descriptions.csv]
+    app2_desc[*_outputs/app2_descriptions.csv]
+    final_desc[*_outputs/final_combined_descriptions.csv]
+    subject_desc[*_outputs/subject_descriptions.csv]
 
     %% Dependencies and flows
-    ceratolobus_xlsx --> format_script
+    *_xlsx --> format_script
     format_script --> formatted_csv
     format_script --> multi_csv
 
@@ -142,7 +144,7 @@ graph TD
     style app2_script fill:#d0e3ff,stroke:#0366d6,stroke-width:1.5px,color:#000000
     style combine_script fill:#d0e3ff,stroke:#0366d6,stroke-width:1.5px,color:#000000
 
-    style ceratolobus_xlsx fill:#d5f5dc,stroke:#22863a,stroke-width:1.5px,color:#000000
+    style *_xlsx fill:#d5f5dc,stroke:#22863a,stroke-width:1.5px,color:#000000
     style appendix_1 fill:#d5f5dc,stroke:#22863a,stroke-width:1.5px,color:#000000
     style appendix_2 fill:#d5f5dc,stroke:#22863a,stroke-width:1.5px,color:#000000
 
@@ -162,8 +164,8 @@ graph TD
 | --------- | ----------- |
 | [resources/appendix_1.txt](https://github.com/KewBridge/CalamusTraits/blob/main/resources/appendix_1.txt) | Text file containing the quantitative trait appendix. |
 | [resources/appendix_2.txt](https://github.com/KewBridge/CalamusTraits/blob/main/resources/appendix_2.txt) | Text file containing the qualitative trait appendix. Qualitative traits are assigned numerical values based on a set of rules. The more complicated the rules, the harder it is for the LLM to assign correctly. |
-| target_species files | Contains the 6 species formerly in the genus *Ceratolobus* (the subset of *Calamus* that this project focuses on). There are two more target species file - these are for the 12 other species used in the project, however the repo focuses on *Ceratolobus*|
-| [resources/Ceratolobus.xlsx](https://github.com/KewBridge/CalamusTraits/blob/main/resources/Ceratolobus.xlsx) | The monograph's supplementary data, subset to contain only *Ceratolobus* species (*C. concolor group*). |
+| target_species files | Contains the 6 species in respective study group. |
+| resources/*.xlsx | The monograph's supplementary data, subset to contain only the species in each study group. |
 
 ### data/... Files
 
@@ -174,7 +176,7 @@ graph TD
 | data/treatments.txt | The extracted treatments for each of the target species |
 | data/sentences.txt | The treatments are split up into sentences / phrases and categorised. |
 
-### ceratolobus_outputs/... Files
+### *_outputs/... Files
 
 | File Name | Description |
 | --------- | ----------- |
