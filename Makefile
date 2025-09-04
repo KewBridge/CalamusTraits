@@ -9,7 +9,7 @@ data/appendix_2.txt: scripts/monograph_text_extraction/clean_appendix.py resourc
 
 appendices: data/appendix_1.txt data/appendix_2.txt
 
-# Extract treatments and sentences for ceratolobus group
+# Extract treatments and sentences
 data/%_treatments.txt: scripts/monograph_text_extraction/extract_treatments.py resources/calamus_monograph.pdf resources/%_target_species.txt
 	mkdir -p data
 	python $^ $@
