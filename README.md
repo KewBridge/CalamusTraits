@@ -137,17 +137,19 @@ The following instructions assume that you have cloned the repository to a machi
 
 ## How to Run the Scripts
 
-**The following instructions outline how to run description generation scripts for the *Ceratolobus* group***
+### The following instructions outline how to run description generation scripts
 
 1. You must have completed the 'Set Up' steps as found above
-2. Run `make ceratolobus_descriptions` to generate descriptions. It takes ~20 mins to generate 6 full species descriptions.
+2. Run `make *_descriptions` to generate descriptions. Where * can be *ceratolobus*, *daemonorops*, or extras. It takes ~20 mins to generate 6 full species descriptions.
 
-**The following instructions outline how to run quantitative trait extraction scripts for the *Ceratolobus* group***
+### The following instructions outline how to run quantitative trait extraction scripts
 
 1. You must have completed the 'Set Up' steps as found above
-2. Run `make ceratbolobus_outputs/quantitative_traits.csv` to extract quantitative traits from species descriptions.
+2. Run `make *_outputs/quantitative_traits.csv` to extract quantitative traits from species descriptions. Where * can be *ceratolobus*, *daemonorops*, or extras.
 
-*Scripts can be customised by the user to target different species. Here, I use *Ceratolobus* to demonstrate the workflow.
+### Alternatively, to run all scripts associated with a group
+
+- Run `make ceratbolobus`, `make daemonorops`, or `make extras`
 
 ## Citation
 
