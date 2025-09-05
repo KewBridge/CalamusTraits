@@ -148,3 +148,9 @@ The following instructions assume that you have cloned the repository to a machi
 2. Run `make ceratbolobus_outputs/quantitative_traits.csv` to extract quantitative traits from species descriptions.
 
 *Scripts can be customised by the user to target different species. Here, I use *Ceratolobus* to demonstrate the workflow.
+
+## Citation
+
+```
+Fiddes, A. (2025) Exploring the Use of Large Language Models (LLMs) as an Aid for Botanical Monograph Compilation. Zenodo. doi:10.5281/zenodo.17062401.
+```
